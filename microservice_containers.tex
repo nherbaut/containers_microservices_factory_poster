@@ -134,12 +134,11 @@
   % Title
   {\sf %Sans Serif
   %\bf% Serif
-   Développer, Tester et Livrer des microservices   
-   à l'aide de Containers}
+   Développer, Tester et Livrer des \mbox{microservices à l'aide de Containers}}
   % Authors
   {\sf %Sans Serif
   % Serif
-  \underline{Nicolas Herbaut} (LaBRI), David Bourasseau et Maxime Peterlin (ENSEIRB-MATMECA)
+  \underline{Nicolas Herbaut} (LaBRI) \mbox{David Bourasseau et Maxime Peterlin (ENSEIRB-MATMECA)}
   }
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
@@ -186,37 +185,44 @@
 
 
  }
-   \headerbox{Project}{name=project,column=1,span=2,row=0}{
+   \headerbox{Le Project SnapMail}{name=project,column=1,span=2,row=0}{
 
-   \vspace{0.3em}
-   
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
-
-In hac habitasse platea dictumst. Integer condimentum malesuada risus et convallis. Sed sit amet augue non est tristique eleifend et et enim. Donec sit amet hendrerit eros. In ac eleifend orci, ac condimentum purus. Nunc mi est, rutrum sit amet erat blandit, congue ultrices turpis. Vestibulum auctor ac metus quis eleifend. In id accumsan purus, et suscipit nisi. Etiam mollis malesuada mi eget tristique. Duis vitae diam sit amet eros faucibus eleifend. Morbi consectetur placerat eros, sit amet tincidunt mi pulvinar non. 
- }
+   \begin{multicols}{2}
+			\begin{minipage}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{snapmail}
+				\begin{center}\textbf{Un serveur mail à la maison qui héberge vos pièces jointes}
+				\vspace{2em}
+				\end{center}
+			\end{minipage}
+			Le projet est conçu comme un greffon à un autre projet de réseaux social distribué sur les passerelles résidentielles.
+			L'utilisateur configure son client mail avec le serveur SMTP de la passerelle, afin d'y faire transiter tout son courrier sortant. 
+			
+			La passerelle va \textit{détacher} les pièces jointes, les stocker sur la passerelles et les remplacer dans le mail par des liens web. Ces liens pointent vers les contenus originaux ainsi que vers des versions optimisées des videos (streaming adaptatif) et photo (converties et redimentionnées)
+	\end{multicols}
+    }
  
-   \headerbox{Micro Services}{name=microdesc,column=0,row=0,below=contribution}{
+   \headerbox{Concepts des Microservices}{name=microdesc,column=0,row=0,below=contribution}{
   \vspace{0.3em}
   
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
+  \center{
+   \includegraphics[width=\textwidth]{msprinciples}
+   }
+	
 
 
  }
-   \headerbox{Micro Services}{name=micro,column=1,span=2,row=0,below=project}{
-  \vspace{10em}
-  
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
-
-In hac habitasse platea dictumst. Integer condimentum malesuada risus et convallis. Sed sit amet augue non est tristique eleifend et et enim. Donec sit amet hendrerit eros. In ac eleifend orci, ac condimentum purus. Nunc mi est, rutrum sit amet erat blandit, congue ultrices turpis. Vestibulum auctor ac metus quis eleifend. In id accumsan purus, et suscipit nisi. Etiam mollis malesuada mi eget tristique. Duis vitae diam sit amet eros faucibus eleifend. Morbi consectetur placerat eros, sit amet tincidunt mi pulvinar non. 
+   \headerbox{Mise en place des microservices}{name=micro,column=1,span=2,row=0,below=project}{
+   
+   
  }
  
-   \headerbox{Intégration Continue}{name=cidesc,column=0,row=0,below=microdesc}{
+   \headerbox{Tests \& intégration continue}{name=cidesc,column=0,row=0,below=microdesc}{
   
   
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
-
-In hac habitasse platea dictumst. Integer condimentum malesuada risus et convallis. Sed sit amet augue non est tristique eleifend et et enim. Donec sit amet hendrerit eros. In ac eleifend orci, ac condimentum purus. Nunc mi est, rutrum sit amet erat blandit, congue ultrices turpis. Vestibulum auctor ac metus quis eleifend. In id accumsan purus, et suscipit nisi. Etiam mollis malesuada mi eget tristique. Duis vitae diam sit amet eros faucibus eleifend. Morbi consectetur placerat eros, sit amet tincidunt mi pulvinar non. 
-\vspace{0.3em}
+   \center{
+   \includegraphics[width=\textwidth]{tests}
+   }
+   
  }
    \headerbox{Intégration Continue}{name=ci,column=1,span=2,row=0,below=micro}{
   
@@ -227,13 +233,13 @@ In hac habitasse platea dictumst. Integer condimentum malesuada risus et convall
 \vspace{0.3em}
  }
  
-   \headerbox{Refefrence}{name=reference,column=0,row=0,below=cidesc}{
+   \headerbox{Références}{name=reference,column=0,row=0,below=cidesc}{
     
-    [1] Microservice, Martin Fowler's blog http://bit.ly/1dI7ZJQ
+    [1] \textit{Blog} Microservice, de Martin Fowler http://bit.ly/1dI7ZJQ
     
-    [2] \underline{Building Microservices} Designing Fine-Grained Systems, Sam Newman, O'Reilly Media 215
+    [2] \textit{Livre} \underline{Building Microservices} Designing Fine-Grained Systems, Sam Newman, O'Reilly Media 215
     
-    [3] Software Engineering Radio, Episode 213: James Lewis on Microservices, http://bit.ly/1tkIbeN
+    [3] \textit{Podcast} Software Engineering Radio, Episode 213: James Lewis on Microservices, http://bit.ly/1tkIbeN
    
     
   
