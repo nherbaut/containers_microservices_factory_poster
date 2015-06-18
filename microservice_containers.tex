@@ -118,7 +118,7 @@
   textborder=roundedleft,
 %  textborder=rectangle,
   % Format of text header
-  eyecatcher=false,
+  eyecatcher=true,
   headerborder=open,
   headerheight=0.08\textheight,
   headershape=roundedright,
@@ -130,23 +130,25 @@
   linewidth=2pt
   }
   % Eye Catcher
-  {\includegraphics[width=10em]{D1077}} % No eye catcher for this poster. (eyecatcher=no above). If an eye catcher is present, the title is centered between eye-catcher and logo.
+  {\includegraphics[width=10em]{docknroll}} % No eye catcher for this poster. (eyecatcher=no above). If an eye catcher is present, the title is centered between eye-catcher and logo.
   % Title
   {\sf %Sans Serif
   %\bf% Serif
-   Développer des microservices containerisés}
+   Développer, Tester et Livrer des microservices   
+   à l'aide de Containers}
   % Authors
   {\sf %Sans Serif
   % Serif
-  \vspace{1em}\{Nicolas.herbaut\}@labri.fr
+  \underline{Nicolas Herbaut} (LaBRI), David Bourasseau et Maxime Peterlin (ENSEIRB-MATMECA)
   }
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
     \makebox[8em][r]{%
       \begin{minipage}{16em}
         \hfill
-        \includegraphics[height=5.0em]{enseirb-matmeca}
-		\includegraphics[height=5.0em]{labri}
+		\includegraphics[height=3.0em]{labri}
+        \includegraphics[height=3.0em]{enseirb-matmeca}
+		
       \end{minipage}
     }
   }
@@ -175,8 +177,12 @@
   \headerbox{Contribution}{name=contribution,column=0,row=0}{
   \vspace{0.3em}
   
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
-
+   Nous exposons un retour d'expérience sur le déroulé d'un projet étudiant, visant à intégrer des microservices développés par des équipes différentes.
+   
+   Nous documentons également comme nous avons utilisé Docker comme unité de déploiement pour les mises en production et comme unité de développement pour les tests et l'intégration continue.
+   
+   \vspace{1em}
+   \textbf{Mots clés}: \textit{Docker, Architecture Microservice, Architecture RestFul, Intégration Continue, Jenkins, Tests Unitaires, Tests d'intégration, Java, Mock}
 
 
  }
