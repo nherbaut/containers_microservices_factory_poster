@@ -13,6 +13,7 @@
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{multicol}
+\usepackage{ marvosym }
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{00A0}{ }
 \usepackage{pgfbaselayers}
@@ -134,11 +135,12 @@
   % Title
   {\sf %Sans Serif
   %\bf% Serif
-   Développer, Tester et Livrer des \mbox{microservices à l'aide de Containers}}
+   Développer, Tester et Livrer des \mbox{Microservices à l'aide de Containers}}
   % Authors
   {\sf %Sans Serif
   % Serif
-  \underline{Nicolas Herbaut} (LaBRI) \mbox{David Bourasseau et Maxime Peterlin (ENSEIRB-MATMECA)}
+  \vspace{0.5em}
+  Nicolas Herbaut (LaBRI, ENSEIRB-MATMECA) \mbox{David Bourasseau et Maxime Peterlin (ENSEIRB-MATMECA)}
   }
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
@@ -176,7 +178,7 @@
   \headerbox{Contribution}{name=contribution,column=0,row=0}{
   \vspace{0.3em}
   
-   Nous exposons un retour d'expérience sur le déroulé d'un projet étudiant, visant à intégrer des microservices développés par des équipes différentes.
+   Nous exposons un retour d'expérience sur le déroulé d'un projet étudiant, visant à intégrer des Microservices développés par des équipes différentes.
    
    Nous documentons également comme nous avons utilisé Docker comme unité de déploiement pour les mises en production et comme unité de développement pour les tests et l'intégration continue.
    
@@ -190,7 +192,7 @@
    \begin{multicols}{2}
 			\begin{minipage}{0.5\textwidth}
 				\includegraphics[width=\textwidth]{snapmail}
-				\begin{center}\textbf{Un serveur mail à la maison qui héberge vos pièces jointes}
+				\begin{center}\textbf{Un serveur mail à la maison qui héberge vos pièces jointes volumineuses}
 				\vspace{2em}
 				\end{center}
 			\end{minipage}
@@ -201,18 +203,48 @@
 	\end{multicols}
     }
  
-   \headerbox{Concepts des Microservices}{name=microdesc,column=0,row=0,below=contribution}{
-  \vspace{0.3em}
+   \headerbox{Bénéfices des Microservices}{name=microdesc,column=0,row=0,below=contribution}{
+   
   
-  \center{
+  
+  \begin{center}
    \includegraphics[width=\textwidth]{msprinciples}
-   }
+   \textbf{Principes guidants les architectures Microservices.}
+   \end{center}
+   
+   Les MS sont des \textbf{Services petits et autonomes qui fonctionnent ensembles}, promouvant un couplage lâche et une cohésion forte.
+   Les MS émergent des tendances actuelles de l'ingénieurie logicielle (\textit{Design Driven Development, Livraison Continue, Virtualisation, Agilité, mouvement DevOps, Antifragile}) et .
+   
+   
+   
 	
 
 
  }
-   \headerbox{Mise en place des microservices}{name=micro,column=1,span=2,row=0,below=project}{
-   
+   \headerbox{Mise en place dans nos projets}{name=micro,column=1,span=2,row=0,below=project}{
+   \begin{multicols}{2}
+		   \begin{minipage}{0.5\textwidth}
+						\includegraphics[width=\textwidth]{snapservices}
+						\begin{center}\textbf{Découpage selon les concepts métiers}
+						\vspace{2em}
+						\end{center}
+					\end{minipage}
+					
+	Point de départ: deux applications monolithiques (réseau social et transcoding multimédia) ont déjà été développées et continuent à être améliorées. 
+	Un nouveau projet est lancé pour ajouter des fonctionnalités au produit. Le produit aura une vie assez longue doit permettre à tout moment de remplacer un de ses composant par une version améliorée en limitant le coût d'intégration de la nouvelle brique.
+	
+	Les domaines sont suffisament différents pour que les contours métiers soient clairs: \textit{Réseau Social, Transcoding Multimédia, Email, Antivirus}. Nous choisissons passer sous une architecture Microservices (MS) pour plusieurs raison:
+	\begin{itemize}
+		\item Les deux projets doivent être évalués indépendemment sans que l'un compromette l'autre. \MVRightarrow \  \textbf{séparation des repos de sources pas de code partagé, pas de base de donnée commune}
+		\item Communication nécessaire entre services \MVRightarrow \ \textbf{Mise en place de l'API REST}
+		\item Choix du meilleur langage pour chaque service (Java, Python) \MVRightarrow \ \textbf{Hétérogénéité des solutions techniques masquée derrière l'API}
+		\item Nécessité de faire tourner les autres services en local pour développer le sien\MVRightarrow \ \textbf{Dockerisation des MS, déploiement des MS pré-configurés dans DockerHub, récupération automatique des images par le dev }
+		\item Démo du produit global tous les 15 jours \MVRightarrow \ \textbf{déploiement de toute la solution avec Docker Compose en pré-prod. Un service défecteux peut être isolé pas livré}
+	\end{itemize} 
+	
+					
+	\end{multicols}
+	
    
  }
  
@@ -221,7 +253,10 @@
   
    \center{
    \includegraphics[width=\textwidth]{tests}
+    \textbf{Typologie des tests}
    }
+   
+
    
  }
    \headerbox{Intégration Continue}{name=ci,column=1,span=2,row=0,below=micro}{
