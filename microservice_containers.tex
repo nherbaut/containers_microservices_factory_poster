@@ -135,7 +135,7 @@
   % Title
   {\sf %Sans Serif
   %\bf% Serif
-   Développer, Tester et Livrer des \mbox{Microservices à l'aide de Containers}}
+   Développer, Tester et Livrer des \mbox{Microservices à l'aide de Docker}}
   % Authors
   {\sf %Sans Serif
   % Serif
@@ -147,8 +147,8 @@
     \makebox[8em][r]{%
       \begin{minipage}{16em}
         \hfill
-		\includegraphics[height=3.0em]{labri}
-        \includegraphics[height=3.0em]{enseirb-matmeca}
+		\includegraphics[height=5em]{labri}
+        \includegraphics[height=5em]{enseirb-matmeca}
 		
       \end{minipage}
     }
@@ -178,28 +178,38 @@
   \headerbox{Contribution}{name=contribution,column=0,row=0}{
   \vspace{0.3em}
   
-   Nous exposons un retour d'expérience sur le déroulé d'un projet étudiant, visant à intégrer des Microservices développés par des équipes différentes.
+   Nous exposons un \textbf{retour d'expérience} sur le déroulé de 2 projets étudiants où nous avons utilisé Docker au service d'une architecture Microservice.
    
-   Nous documentons également comme nous avons utilisé Docker comme unité de déploiement pour les mises en production et comme unité de développement pour les tests et l'intégration continue.
+   Nous documentons comment nous avons utilisé Docker comme \textbf{unité de déploiement} pour les mises en production et comme \textbf{unité de développement} pour les tests et l'Intégration Continue.
    
    \vspace{1em}
    \textbf{Mots clés}: \textit{Docker, Architecture Microservice, Architecture RestFul, Intégration Continue, Jenkins, Tests Unitaires, Tests d'intégration, Java, Mock}
 
 
  }
-   \headerbox{Le Project SnapMail}{name=project,column=1,span=2,row=0}{
+   \headerbox{Cobaye: Le Project SnapMail}{name=project,column=1,span=2,row=0}{
 
    \begin{multicols}{2}
+	   
+			
 			\begin{minipage}{0.5\textwidth}
+			\vspace{1em}
 				\includegraphics[width=\textwidth]{snapmail}
 				\begin{center}\textbf{Un serveur mail à la maison qui héberge vos pièces jointes volumineuses}
-				\vspace{2em}
+				
 				\end{center}
+				
 			\end{minipage}
-			Le projet est conçu comme un greffon à un autre projet de réseaux social distribué sur les passerelles résidentielles.
-			L'utilisateur configure son client mail avec le serveur SMTP de la passerelle, afin d'y faire transiter tout son courrier sortant. 
 			
-			La passerelle va \textit{détacher} les pièces jointes, les stocker sur la passerelles et les remplacer dans le mail par des liens web. Ces liens pointent vers les contenus originaux ainsi que vers des versions optimisées des videos (streaming adaptatif) et photo (converties et redimentionnées)
+				
+			
+			Pour pallier au problème des \textbf{pièces jointes volumineuses}, une passerelle mail est déployée sur une passerelle résidentielle.
+			L'utilisateur configure son client mail avec le serveur SMTP de la passerelle, afin d'y faire transiter tout son courrier sortant. 
+			La passerelle va \textbf{détacher les pièces jointes}, \textbf{les stocker} et \textbf{les remplacer par des liens} dans le mail . Ces liens pointent vers les contenus originaux ainsi que vers des \textbf{versions optimisées} des videos (streaming adaptatif) et photo (converties et redimentionnées)
+			
+			Le projet est conçu comme un greffon à un autre projet de \textbf{réseaux social distribué } également déployé sur les passerelles résidentielles
+			
+			
 	\end{multicols}
     }
  
@@ -213,7 +223,7 @@
    \end{center}
    
    Les MS sont des \textbf{Services petits et autonomes qui fonctionnent ensembles}, promouvant un couplage lâche et une cohésion forte.
-   Les MS émergent des tendances actuelles de l'ingénieurie logicielle (\textit{Design Driven Development, Livraison Continue, Virtualisation, Agilité, mouvement DevOps, Antifragile}) et .
+   Les MS émergent des tendances actuelles de l'ingénieurie logicielle (\textit{Design Driven Development, Livraison Continue, Virtualisation, Agilité, mouvement DevOps, Antifragile}) etc.
    
    
    
@@ -230,8 +240,6 @@
 						\end{center}
 					\end{minipage}
 					
-	Point de départ: deux applications monolithiques (réseau social et transcoding multimédia) ont déjà été développées et continuent à être améliorées. 
-	Un nouveau projet est lancé pour ajouter des fonctionnalités au produit. Le produit aura une vie assez longue doit permettre à tout moment de remplacer un de ses composant par une version améliorée en limitant le coût d'intégration de la nouvelle brique.
 	
 	Les domaines sont suffisament différents pour que les contours métiers soient clairs: \textit{Réseau Social, Transcoding Multimédia, Email, Antivirus}. Nous choisissons passer sous une architecture Microservices (MS) pour plusieurs raison:
 	\begin{itemize}
@@ -251,21 +259,38 @@
    \headerbox{Tests \& intégration continue}{name=cidesc,column=0,row=0,below=microdesc}{
   
   
-   \center{
-   \includegraphics[width=\textwidth]{tests}
-    \textbf{Typologie des tests}
-   }
+   \begin{center}
+	\includegraphics[width=\textwidth]{tests}
+    \textbf{Typologie des tests}   
+   \end{center}
+   
+   
    
 
    
  }
    \headerbox{Intégration Continue}{name=ci,column=1,span=2,row=0,below=micro}{
-  
-  
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus ac est non mollis. Sed nibh eros, vestibulum at libero nec, accumsan elementum risus. Curabitur non ex pulvinar, laoreet est vitae, efficitur quam. Sed ut eros pharetra, vestibulum est vel, elementum ex. Etiam finibus in velit eu viverra. Nunc tincidunt lectus nec dictum interdum. Nunc tincidunt porta hendrerit. Proin elementum id elit nec lobortis. Quisque id sodales felis, accumsan finibus turpis. Pellentesque vitae odio orci. Curabitur in blandit nisi.
+   
+	\begin{center}
+	\includegraphics[width=\textwidth]{workflow}
+    \textbf{Workflow de développement}
+   
+   \end{center}
+    \begin{multicols}{2}
+    
+Tester une architecture Microservice montre certaines particularités par rapport aux monolithes.
+\begin{itemize}
+	\item En raison de l'homogénécité du métier, \textbf{les tests unitaires} sont plus simples écrire. 
+	\item  \textbf{Les tests de services} nécessitent l'utilisation de mocks d'interfaces REST, que nous avons réalisé avec Montbank (http://www.mbtest.org/).
+	\item Une fois par jour, Jenkins réalise une série de \textbf{tests de bout en bout} en lançant un environement iso-production des services et en faisant jouer des scenari utilisateurs.
+	\item Grace au DockerHub, toutes les machines autorisées peuvent récupérer les images docker et les lancer à tout moment. Les \textbf{bugs sont donc plus facilement reproduits} sur la machine du développeur.
+\end{itemize}
 
-In hac habitasse platea dictumst. Integer condimentum malesuada risus et convallis. Sed sit amet augue non est tristique eleifend et et enim. Donec sit amet hendrerit eros. In ac eleifend orci, ac condimentum purus. Nunc mi est, rutrum sit amet erat blandit, congue ultrices turpis. Vestibulum auctor ac metus quis eleifend. In id accumsan purus, et suscipit nisi. Etiam mollis malesuada mi eget tristique. Duis vitae diam sit amet eros faucibus eleifend. Morbi consectetur placerat eros, sit amet tincidunt mi pulvinar non. 
-\vspace{0.3em}
+
+					
+	\end{multicols}
+  
+
  }
  
    \headerbox{Références}{name=reference,column=0,row=0,below=cidesc}{
@@ -282,9 +307,13 @@ In hac habitasse platea dictumst. Integer condimentum malesuada risus et convall
   \vspace{0.3em}
   
  }
-   \headerbox{Remerciements}{name=ack,column=1,span=2,row=0,below=ci}{
-   merci
-  \vspace{0.3em}
+   \headerbox{Exemples d'architectures Microservices}{name=ack,column=1,span=2,row=0,below=ci}{
+ 
+ \vspace{1.5em}
+ \includegraphics[width=0.33\textwidth]{docker}
+ \includegraphics[width=0.33\textwidth]{netflix}
+ \includegraphics[width=0.33\textwidth]{amazon}
+ \vspace{1.5em}
   
  }
  
