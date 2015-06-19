@@ -8,7 +8,7 @@ dockerhub [shape="box",style="rounded,filled", fillcolor="gold", label="DockerHu
 preprod [shape="box",style="rounded,filled", fillcolor="gold", label="Préproduction", fontsize="14"];
 
 dev->git [label="push code"];
-git -> jenkins [label="déclanche"];
+git -> jenkins [label="déclenche"];
 jenkins->dev [label="notifie si erreur"];
 jenkins -> jenkins [label="execute les tests\nconstruit les artefacts"];
 

@@ -5,9 +5,9 @@ g [shape="box",style="rounded,filled", fillcolor="gold", label="Supervisés", fo
 c [shape="box",style="rounded,filled", fillcolor="gold", label="Conçus autour des\nconcepts métiers", fontsize="10"];
 d [shape="box",style="rounded,filled", fillcolor="gold", label="Automatisés", fontsize="10"];
 
-f [shape="box",style="rounded,filled", fillcolor="gold", label="Décentralisé", fontsize="10"];
+f [shape="box",style="rounded,filled", fillcolor="gold", label="Décentralisés", fontsize="10"];
 b [shape="box",style="rounded,filled", fillcolor="gold", label="Se déploient\nindépendamment", fontsize="10"];
-a [shape="box",style="rounded,filled", fillcolor="gold", label="Erreurs\isolées", fontsize="10"];
+a [shape="box",style="rounded,filled", fillcolor="gold", label="Erreurs\nisolées", fontsize="10"];
 e [shape="box",style="rounded,filled", fillcolor="gold", label="Masquent les détails\nd'implémentation", fontsize="10"];
 ms [shape="box",style="rounded,filled,bold", fillcolor="skyblue", label="Microservices", fontsize="10", ];
 
