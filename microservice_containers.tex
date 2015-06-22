@@ -209,11 +209,11 @@
 			
 				
 			
-			Pour pallier au problème des \textbf{pièces jointes volumineuses}, un server SMTP est déployée sur une passerelle résidentielle.
+			Pour pallier au problème des \textbf{pièces jointes volumineuses}, un server SMTP est déployé sur une passerelle résidentielle.
 			L'utilisateur configure son client mail avec ce server afin d'y faire transiter son courrier sortant. 
 			La passerelle va \textbf{détacher les pièces jointes}, \textbf{les stocker} et \textbf{les remplacer par des liens} dans le mail . Ces liens pointent vers les contenus originaux ainsi que vers des \textbf{versions optimisées} des videos (streaming adaptatif) et photos (converties et redimentionnées).
 			
-			Le projet est conçu comme un greffon à un autre projet de \textbf{réseaux social distribué } également déployé sur les passerelles résidentielles.
+			Le projet est conçu comme un greffon à un autre projet de \textbf{réseau social distribué } également déployé sur les passerelles résidentielles.
 			
 			
 	\end{multicols}
@@ -225,7 +225,7 @@
   
   \begin{center}
    \includegraphics[width=\textwidth]{msprinciples}
-   \textbf{Principes guidants les architectures Microservices.}
+   \textbf{Principes guidant les architectures Microservices.}
    \end{center}
    
    Les MS sont des \textbf{Services petits et autonomes qui fonctionnent ensembles}, promouvant un couplage lâche et une cohésion forte.
@@ -248,14 +248,14 @@
 					\end{minipage}
 					
 	
-	Les domaines sont suffisament différents pour que les contours métiers soient clairs: \textit{Réseau Social, Transcoding Multimédia, Email, Antivirus}. Nous choisissons de passer sous une architecture Microservices (MS) pour plusieurs raison:
+	Les domaines sont suffisament différents pour que les contours métiers soient clairs: \textit{Réseau Social, Transcoding Multimédia, Email, Antivirus}. Nous choisissons de passer sous une architecture Microservices (MS) pour plusieurs raisons:
 	\vspace{1em}
 	\begin{itemize}
-		\item Les deux projets doivent être évalués indépendamment sans que l'un compromette l'autre. \MVRightarrow \  \textbf{séparation des dépots de sources, pas de code partagé, pas de base de donnée commune}.
+		\item Les deux projets doivent être évalués indépendamment sans que l'un compromette l'autre. \MVRightarrow \  \textbf{séparation des dépots de sources, pas de code partagé, pas de base de données commune}.
 		\item Communication nécessaire entre services \MVRightarrow \ \textbf{Mise en place de l'API REST}.
 		\item Choix du meilleur langage pour chaque service (Java, Python) \MVRightarrow \ \textbf{Hétérogénéité des solutions techniques masquée derrière l'API}.
 		\item Nécessité de faire tourner les autres services en local pour développer le sien\MVRightarrow \ \textbf{Dockerisation des MS, déploiement des MS pré-configurés dans DockerHub, récupération automatique des images par le dev}.
-		\item Approche agile du développement entrainant une démo du produit global tous les 15 jours \MVRightarrow \ \textbf{déploiement de toute la solution avec Docker Compose en pré-prod. La livraison d'un service défecteux peut être reportée}.
+		\item Approche agile du développement entrainant une démo du produit global tous les 15 jours \MVRightarrow \ \textbf{déploiement de toute la solution avec Docker Compose en pré-prod. La livraison d'un service défectueux peut être reportée}.
 		
 	\end{itemize} 
 	
@@ -289,7 +289,7 @@
     
 Tester une architecture Microservice montre certaines particularités par rapport aux monolithes.
 \begin{itemize}
-	\item En raison de l'homogénéité du métier, \textbf{les tests unitaires} sont plus simples écrire. 
+	\item En raison de l'homogénéité du métier, \textbf{les tests unitaires} sont plus simples à écrire. 
 	\item  \textbf{Les tests de services} nécessitent l'utilisation de mocks d'interfaces REST, que nous avons réalisé avec Montbank (http://www.mbtest.org/).
 	\item Une fois par jour, Jenkins réalise une série de \textbf{tests de bout en bout} en lançant un environnement iso-production des services et en faisant jouer des scénarios utilisateurs.
 	\item Grace au DockerHub, toutes les machines autorisées peuvent récupérer les images docker et les lancer à tout moment. Les \textbf{bugs sont donc plus facilement reproduits} sur la machine du développeur.
